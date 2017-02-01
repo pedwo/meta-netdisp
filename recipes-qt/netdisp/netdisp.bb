@@ -14,15 +14,14 @@ S = "${WORKDIR}/git"
 require recipes-qt/qt5/qt5.inc
 
 do_install() {
-    install -d ${D}${bindir}
-    install -m 0755 ${B}/netdisp ${D}${bindir}
-    install -m 0755 ${S}/Renesas_blue.png ${D}${bindir}
-    install -m 0755 ${S}/Renesas-RZ.png ${D}${bindir}
-    install -m 0755 ${S}/port-unused.png ${D}${bindir}
-    install -m 0755 ${S}/port-active.png ${D}${bindir}
-    install -m 0755 ${S}/port-inactive.png ${D}${bindir}
+    install -d ${D}${datadir}/netdisp
+    install -m 0755 ${B}/netdisp           ${D}${datadir}/netdisp
+    install -m 0755 ${S}/Renesas-RZ.png    ${D}${datadir}/netdisp
+    install -m 0755 ${S}/port-unused.png   ${D}${datadir}/netdisp
+    install -m 0755 ${S}/port-active.png   ${D}${datadir}/netdisp
+    install -m 0755 ${S}/port-inactive.png ${D}${datadir}/netdisp
 }
 
-FILES_${PN} = "${bindir}"
+FILES_${PN} = "${datadir}/netdisp"
 
 RDEPENDS_${PN} = "qtbase-plugins"
