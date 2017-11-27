@@ -39,11 +39,6 @@ IMAGE_INSTALL += " \
 # use this distro recipe for 3rd parties that use it for Qt development.
 IMAGE_INSTALL += " qtwebkit"
 
-# QtWebkit pulls in some optional packages, and these then pull in a lot
-# more packages. To keep the size of the distro down, we are explicity
-# removing these optional packages
-PACKAGES_remove = " qtlocation qtmultimedia qtsensors qtwebchannel"
-
 # Since we want this for 3rd party development, include libs, etc
 IMAGE_FEATURES += "dev-pkgs"
 
