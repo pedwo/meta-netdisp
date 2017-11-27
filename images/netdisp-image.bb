@@ -44,6 +44,9 @@ IMAGE_INSTALL += " qtwebkit"
 # removing these optional packages
 PACKAGES_remove = " qtlocation qtmultimedia qtsensors qtwebchannel"
 
+# Since we want this for 3rd party development, include libs, etc
+IMAGE_FEATURES += "dev-pkgs"
+
 export IMAGE_BASENAME = "netdisp-image"
 
 # We only want a tarball output as we are extracting to an SD card.
